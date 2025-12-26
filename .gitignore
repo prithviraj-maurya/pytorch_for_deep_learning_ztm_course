@@ -1,4 +1,7 @@
 data/
 .ipynb_checkpoints/
+__pycache__
 going_modular/__pycache__/
 runs
+pytorch_deep_learning/
+models/
