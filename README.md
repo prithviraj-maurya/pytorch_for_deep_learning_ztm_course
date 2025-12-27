@@ -1,69 +1,116 @@
-# My PyTorch for Deep Learning Journey
+## PyTorch for Deep Learning – Personal Implementation
 
-This repository contains my personal work and code as I follow along with the excellent ["PyTorch for Deep Learning"](https://www.learnpytorch.io/) course by Daniel Bourke. My goal is to replicate the course materials from scratch to build a strong foundation in PyTorch and fundamental deep learning concepts.
+This repository contains my personal implementations and experiments following the “PyTorch for Deep Learning”￼ course by Daniel Bourke. My goal is to replicate all course notebooks from scratch, implement milestone projects, and develop modular, production-ready PyTorch pipelines.
 
-This project is for my personal learning and to showcase my progress in mastering PyTorch.
+This project demonstrates a solid foundation in PyTorch, deep learning, transfer learning, Vision Transformers (ViT), and model deployment.
 
-## Acknowledgements
 
-A huge thank you to Daniel Bourke for creating such a comprehensive and accessible resource for the deep learning community.
+Live Demo (Food Vision Big): https://huggingface.co/spaces/prithviraj-maurya/food-vision-big￼
 
-*   **Original Course Website:** [learnpytorch.io](https://www.learnpytorch.io/)
-*   **Original GitHub Repository:** [mrdbourke/pytorch-deep-learning](https://github.com/mrdbourke/pytorch-deep-learning)
 
-## Course Progress
+⸻
 
-Here is a list of the course modules. I will be checking them off as I complete the notebooks and exercises for each section.
+🌟 Highlights
 
-- [X] **00. PyTorch Fundamentals**
-- [X] **01. PyTorch Workflow**
-- [X] **02. PyTorch Neural Network Classification**
-- [X] **03. PyTorch Computer Vision**
-- [X] **04. PyTorch Custom Datasets**
-- [X] **05. PyTorch Going Modular**
-- [X] **06. PyTorch Transfer Learning**
-- [X] **07. PyTorch Experiment Tracking**
-- [X] **08. PyTorch Paper Replicating**
-- [ ] **09. PyTorch Model Deployment**
+	•	Reimplemented all course notebooks in a clean, modular GitHub repository
 
-## Key Concepts & Learnings
+	•	Completed Milestone 08: Paper Replication
 
-Throughout this course, I am focusing on understanding and implementing the following core concepts:
+	•	Replicated “An Image is Worth 16×16 Words: Transformers for Image Recognition at Scale”
 
-*   **Tensors:** The fundamental data structure in PyTorch.
-*   **Computational Graphs:** How PyTorch builds and executes models.
-*   **`torch.nn`:** Building neural network layers and models.
-*   **`torch.utils.data.Dataset` & `DataLoader`:** Creating custom data pipelines for training.
-*   **Loss Functions & Optimizers:** The mechanics of model training.
-*   **Model Evaluation:** Assessing model performance with various metrics.
-*   **GPU Acceleration:** Leveraging CUDA for faster training.
-*   **Transfer Learning:** Using pre-trained models to solve new problems.
-*   **Model Deployment:** Making a trained model available for inference.
+	•	Built ViT from scratch and with PyTorch built-in transformer blocks
 
-## Structure & Usage
+	•	Achieved ~93–94% test accuracy over 10 epochs
 
-### Directory Structure
+| Epoch | Train Loss | Train Acc | Test Loss | Test Acc |
+|-------|------------|-----------|-----------|----------|
+| 1     | 0.7663     | 0.7188    | 0.5436    | 0.8769   |
+| 2     | 0.3436     | 0.9453    | 0.3257    | 0.8977   |
+| 3     | 0.2068     | 0.9492    | 0.2698    | 0.9186   |
+| 4     | 0.1556     | 0.9609    | 0.2414    | 0.9186   |
+| 5     | 0.1243     | 0.9727    | 0.2271    | 0.8977   |
+| 6     | 0.1210     | 0.9766    | 0.2122    | 0.9280   |
+| 7     | 0.0933     | 0.9766    | 0.2341    | 0.8883   |
+| 8     | 0.0793     | 0.9844    | 0.2268    | 0.9081   |
+| 9     | 0.1084     | 0.9883    | 0.2064    | 0.9384   |
+| 10    | 0.0646     | 0.9922    | 0.1795    | 0.9176   |
 
-*   **`going_modular/`**: This directory contains modularized Python scripts for model building and training. This structure allows for cleaner notebooks and reusable code.
-    *   `vit.py`: Contains the full implementation of the Vision Transformer (ViT) architecture, including `PatchEmbedding` and the Transformer Encoder.
-    *   `engine.py`: The "engine" of the training process. It contains:
-        *   `train_step`: Handles the training loop for a single epoch (forward pass, loss calculation, backpropagation, optimizer step).
-        *   `test_step`: Handles the evaluation loop for a single epoch (forward pass, loss calculation, metric calculation).
-        *   `train`: Combines `train_step` and `test_step` to train the model for multiple epochs and track results.
-    *   `train.py`: An executable script to train the model from the command line. It orchestrates the entire process:
-        *   Sets up command-line arguments (hyperparameters like epochs, batch size, learning rate).
-        *   Prepares `DataLoaders` for training and testing.
-        *   Initializes the model (e.g., ViT), loss function, and optimizer.
-        *   Calls `engine.train()` to start training.
-        *   Saves the trained model to a file.
-    *   `helper_functions.py`: Provides utility functions, such as plotting loss curves to visualize model performance over epochs.
+	•	Built modular PyTorch training pipelines:
+	•	engine.py: train_step, test_step, train functions
+	•	train.py: CLI-based training orchestration
+	•	helper_functions.py: Plotting, metrics, utility functions
+	•	Implemented Transfer Learning using:
+	•	EfficientNet-B2 for Food Vision Big (101 classes)
+	•	ViT-B/16 for image classification
+	•	Compared accuracy, speed, and model size between EfficientNet-B2 and ViT models
+	•	Created and deployed a Gradio app on Hugging Face Spaces:
 
-### Installation
+⸻
 
-To run the notebooks or scripts in this repository, ensure you have PyTorch and other dependencies installed:
+📚 Course Progress
 
-```bash
-# It is recommended to create a virtual environment first
-pip install torch torchvision torchaudio
-pip install numpy pandas matplotlib scikit-learn
+Module	Status
+00. PyTorch Fundamentals	✅
+01. PyTorch Workflow	✅
+02. PyTorch Neural Network Classification	✅
+03. PyTorch Computer Vision	✅
+04. PyTorch Custom Datasets	✅
+05. PyTorch Going Modular	✅
+06. PyTorch Transfer Learning	✅
+07. PyTorch Experiment Tracking	✅
+08. PyTorch Paper Replicating	✅
+09. PyTorch Model Deployment	✅
+
+
+⸻
+
+🛠 Key Skills & Concepts
+
+	•	PyTorch Fundamentals: Tensors, computational graphs, autograd
+
+	•	Neural Networks: torch.nn, custom layers, classification, regression
+
+	•	Data Handling: torch.utils.data.Dataset, DataLoader, custom pipelines
+
+	•	Training & Evaluation: Loss functions, optimizers, metrics, GPU acceleration
+
+	•	Transfer Learning: EfficientNet-B2, ViT-B/16, freezing layers, classifier heads
+
+	•	Experiment Tracking: Metrics logging, reproducibility, modular training scripts
+
+	•	Deployment: Gradio apps, Hugging Face Spaces
+
+⸻
+
+🗂 Repository Structure
+
 ```
+going_modular/
+├── engine.py            # train_step, test_step, train functions
+├── vit.py               # Vision Transformer from scratch
+├── train.py             # CLI-based training orchestration
+├── helper_functions.py  # Utilities (plotting, metrics)
+notebooks/               # Recreated course notebooks
+
+```
+⸻
+
+⚡ Installation
+
+#### Create a virtual environment (recommended)
+```
+pip install torch torchvision torchaudio
+pip install numpy pandas matplotlib scikit-learn gradio
+```
+
+⸻
+
+🔗 Links
+
+	•	GitHub Repo: https://github.com/prithviraj-maurya/pytorch_for_deep_learning_ztm_course￼
+
+	•	Live Demo (Food Vision Big): https://huggingface.co/spaces/prithviraj-maurya/food-vision-big￼
+
+	•	Course Resource: learnpytorch.io￼
+
+⸻
