@@ -15,15 +15,15 @@ A huge thank you to Daniel Bourke for creating such a comprehensive and accessib
 
 Here is a list of the course modules. I will be checking them off as I complete the notebooks and exercises for each section.
 
-- [ ] **00. PyTorch Fundamentals**
-- [ ] **01. PyTorch Workflow**
-- [ ] **02. PyTorch Neural Network Classification**
-- [ ] **03. PyTorch Computer Vision**
-- [ ] **04. PyTorch Custom Datasets**
-- [ ] **05. PyTorch Going Modular**
-- [ ] **06. PyTorch Transfer Learning**
-- [ ] **07. PyTorch Experiment Tracking**
-- [ ] **08. PyTorch Paper Replicating**
+- [X] **00. PyTorch Fundamentals**
+- [X] **01. PyTorch Workflow**
+- [X] **02. PyTorch Neural Network Classification**
+- [X] **03. PyTorch Computer Vision**
+- [X] **04. PyTorch Custom Datasets**
+- [X] **05. PyTorch Going Modular**
+- [X] **06. PyTorch Transfer Learning**
+- [X] **07. PyTorch Experiment Tracking**
+- [X] **08. PyTorch Paper Replicating**
 - [ ] **09. PyTorch Model Deployment**
 
 ## Key Concepts & Learnings
@@ -40,9 +40,27 @@ Throughout this course, I am focusing on understanding and implementing the foll
 *   **Transfer Learning:** Using pre-trained models to solve new problems.
 *   **Model Deployment:** Making a trained model available for inference.
 
-## Setup & Usage
+## Structure & Usage
 
-To run any of the notebooks in this repository, you will need to have PyTorch and other relevant libraries installed.
+### Directory Structure
+
+*   **`going_modular/`**: This directory contains modularized Python scripts for model building and training. This structure allows for cleaner notebooks and reusable code.
+    *   `vit.py`: Contains the full implementation of the Vision Transformer (ViT) architecture, including `PatchEmbedding` and the Transformer Encoder.
+    *   `engine.py`: The "engine" of the training process. It contains:
+        *   `train_step`: Handles the training loop for a single epoch (forward pass, loss calculation, backpropagation, optimizer step).
+        *   `test_step`: Handles the evaluation loop for a single epoch (forward pass, loss calculation, metric calculation).
+        *   `train`: Combines `train_step` and `test_step` to train the model for multiple epochs and track results.
+    *   `train.py`: An executable script to train the model from the command line. It orchestrates the entire process:
+        *   Sets up command-line arguments (hyperparameters like epochs, batch size, learning rate).
+        *   Prepares `DataLoaders` for training and testing.
+        *   Initializes the model (e.g., ViT), loss function, and optimizer.
+        *   Calls `engine.train()` to start training.
+        *   Saves the trained model to a file.
+    *   `helper_functions.py`: Provides utility functions, such as plotting loss curves to visualize model performance over epochs.
+
+### Installation
+
+To run the notebooks or scripts in this repository, ensure you have PyTorch and other dependencies installed:
 
 ```bash
 # It is recommended to create a virtual environment first

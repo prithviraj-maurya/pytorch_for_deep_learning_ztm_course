@@ -5,3 +5,5 @@ going_modular/__pycache__/
 runs
 pytorch_deep_learning/
 models/
+.gradio
+demos/
